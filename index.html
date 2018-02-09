@@ -12,6 +12,17 @@
         height: 100px;
         background-color: red;
     }
+    
+    #info {
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        background-color: rgba(255,0,0,0.7);
+        color: white;
+        font-weight: bold;
+        height: 50px;
+/*        display: none;*/
+    }
 </style>
 <script>
     function showAlert(){
@@ -85,11 +96,32 @@
         document.getElementById("div").style.display = 'block'
     }
     
+    function hideInfo() {
+        localStorage.setItem("cookieAlert","hide")
+        document.getElementById("info").style.display = "none"
+    }
+    
+    function checkCookieAlert(){
+        if (localStorage.getItem("cookieAlert") != undefined){
+            document.getElementById("info").style.display = "none";
+        } else {
+            document.getElementById("info").style.display = "block";
+        }
+    }
+    
+    window.onload = checkCookieAlert
+    
 </script>
 <title>js</title>
 <meta charset="UTF-8"/>
 </head>
 <body>
+    
+    <div id="info">
+        Informacja o ciasteczkach...
+        <button onClick="hideInfo()">x</button>
+    </div>
+    
     
     <div id="calc">
     <input type="text" id="jeden" placeholder="jeden">
