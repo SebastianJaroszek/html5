@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    
+<script>
+    function showAlert(){
+        alert('helou2')
+    }
+    
+    function showConfirm(){
+        if(confirm('czy na pewno?')) {
+            alert("na pewno!")
+        } else {
+            alert("nie tym razem")
+        }
+    }
+    
+    function add(){
+        var a = document.getElementById("jeden").value
+        var b = document.getElementById("dwa").value
+        alert(parseInt(a) + parseInt(b))
+    }
+</script>
+<title>js</title>
+    <link rel="stylesheet" href="style.css"/>
+<meta charset="UTF-8"/>
+</head>
+<body>
+    
+    <input type="text" id="jeden" placeholder="jeden">
+    <input type="text" id="dwa" placeholder="dwa">
+    <button onclick="add()">suma</button>
+    <input type="password">
+    <input type="checkbox">
+    <input type="radio">
+    <input type="button" value="zatwierdź" onclick="showConfirm()">
+    <button onclick="showAlert()">drugi button</button>
+    
+</body>
+</html> 
