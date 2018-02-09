@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    
+<style>
+    #calc {
+        border: 1px solid black;
+    }
+</style>
 <script>
     function showAlert(){
         alert('helou2')
@@ -18,7 +22,41 @@
     function add(){
         var a = document.getElementById("jeden").value
         var b = document.getElementById("dwa").value
-        alert(parseInt(a) + parseInt(b))
+        var sum = (parseInt(a) + parseInt(b))
+        document.getElementById("wynik").innerHTML = sum
+    }
+    
+    function substract(){
+        var a = document.getElementById("jeden").value
+        var b = document.getElementById("dwa").value
+        var sum = (parseInt(a) + parseInt(b))
+        document.getElementById("wynik").innerHTML = sum
+    }
+    
+    function multiply(){
+        var a = document.getElementById("jeden").value
+        var b = document.getElementById("dwa").value
+        var sum = (parseInt(a) + parseInt(b))
+        document.getElementById("wynik").innerHTML = sum
+    }
+    
+    function doMath(type){
+        var a = parseInt(document.getElementById("jeden").value)
+        var b = parseInt(document.getElementById("dwa").value)
+        switch(type){
+            case '+': {
+                document.getElementById("wynik").innerHTML = a + b
+                break
+            }
+            case '-': {
+                document.getElementById("wynik").innerHTML = a - b
+                break
+            }
+            case '*': {
+                document.getElementById("wynik").innerHTML = a * b
+            }
+        }
+        
     }
 </script>
 <title>js</title>
@@ -27,9 +65,15 @@
 </head>
 <body>
     
+    <div id="calc">
     <input type="text" id="jeden" placeholder="jeden">
     <input type="text" id="dwa" placeholder="dwa">
-    <button onclick="add()">suma</button>
+    <button onclick="doMath('+')">suma</button>
+    <button onclick="doMath('-')">różnica</button>
+    <button onclick="doMath('*')">iloczyn</button>
+    <label>Wynik:</label>
+        <label id="wynik"></label>
+    </div>
     <input type="password">
     <input type="checkbox">
     <input type="radio">
