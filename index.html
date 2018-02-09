@@ -6,6 +6,12 @@
         border: 1px solid black;
         padding: 3px;
     }
+    
+    .div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
 </style>
 <script>
     function showAlert(){
@@ -70,6 +76,15 @@
         var lista = document.getElementById("lista").innerHTML += "<li>"+produkt.value+"</li>"
         produkt.value = ""
     }
+    
+    function hide() {
+        document.getElementById("div").style.display = 'none'
+    }
+    
+    function show() {
+        document.getElementById("div").style.display = 'block'
+    }
+    
 </script>
 <title>js</title>
 <meta charset="UTF-8"/>
@@ -103,6 +118,18 @@
     <ul id="lista">
     
     </ul>
+    
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div id="div" class="div"></div>
+    <button onClick="hide()">ukryj</button>
+    <button onClick="show()">pokaż</button>
     
 </body>
 </html> 
